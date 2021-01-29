@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordenar texto", "Ordenar texto.csproj", "{707A4E5F-E207-4F51-9215-69B777B54B03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{707A4E5F-E207-4F51-9215-69B777B54B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707A4E5F-E207-4F51-9215-69B777B54B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707A4E5F-E207-4F51-9215-69B777B54B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707A4E5F-E207-4F51-9215-69B777B54B03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F7DB7AF-A49E-4EFA-B814-DD430FBAA316}
+	EndGlobalSection
+EndGlobal
