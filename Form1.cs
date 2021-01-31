@@ -14,17 +14,19 @@ namespace Ordenar_texto
 
     public partial class Form1 : Form
     {
-
+        
         COrdenamineto orde1 = new COrdenamineto();
         //vaiables 
         private bool abierto=false;//ayudara  saber si el archivo esta abierto 
         private string ruta;//ayudara a saber la ruta
         List<string> contenido = new List<string>();
         string[] ordenar;
+        float[] ordenar2;
         int lineas=0, longitud=0;
 
         public Form1()
         {
+            
             InitializeComponent();
         }
 
@@ -75,12 +77,42 @@ namespace Ordenar_texto
                 ordenar = txtPantalla.Text.Split('\n');
                 
                 txtPantalla.Clear();
-                orde1.BUbbleSort(ordenar);
-                if (ordenar.Length > 0) {
-                    
-                    foreach (string letras in ordenar)
+                if (COrdenamineto.EsNum(ordenar))
+                {
+                    OrdenandoLetrasNumeros.Text = "Estas ordenando numeros";
+                    ordenar2 = new float[ordenar.Length];
+                    for (int i = 0; i < ordenar2.Length; i++) { ordenar2[i] = float.Parse(ordenar[i]); }
+
+                    CordenamientoNum.SelecctionSort(ordenar2);
+
+                    for (int i = 0; i < ordenar2.Length; i++)
                     {
-                    txtPantalla.Text += letras + "\n";
+                        if (i != ordenar2.Length - 1)
+                        {
+                            txtPantalla.Text += ordenar2[i] + "\n";
+                        }
+                        else
+                        {
+                            txtPantalla.Text += ordenar2[i];
+                        }
+                    }
+                   
+                }
+                else
+                {
+                    OrdenandoLetrasNumeros.Text = "Estas ordenando letras";
+                    orde1.BUbbleSort(ordenar);
+
+                    for (int i = 0; i < ordenar.Length; i++)
+                    {
+                        if (i != ordenar.Length - 1)
+                        {
+                            txtPantalla.Text += ordenar[i] + "\n";
+                        }
+                        else
+                        {
+                            txtPantalla.Text += ordenar[i];
+                        }
                     }
                 }
             }
@@ -108,16 +140,43 @@ namespace Ordenar_texto
             {
                 ordenar = new string[txtPantalla.Lines.Count()];
                 ordenar = txtPantalla.Text.Split('\n');
-
                 txtPantalla.Clear();
-                if (ordenar.Length > 0)
+                if (COrdenamineto.EsNum(ordenar))
                 {
+                    OrdenandoLetrasNumeros.Text = "Estas ordenando numeros";
+                    ordenar2 = new float[ordenar.Length];
+                    for (int i = 0; i < ordenar2.Length; i++) { ordenar2[i] = float.Parse(ordenar[i]); }
 
+                    CordenamientoNum.InsertionSort2(ordenar2);
+
+                    for (int i = 0; i < ordenar2.Length; i++)
+                    {
+                        if (i != ordenar2.Length - 1)
+                        {
+                            txtPantalla.Text += ordenar2[i] + "\n";
+                        }
+                        else
+                        {
+                            txtPantalla.Text += ordenar2[i];
+                        }
+                    }
+                   
+                }
+                else
+                {
+                    OrdenandoLetrasNumeros.Text = "Estas ordenando letras";
                     //metodo de ordenamineto
                     orde1.InsertionSort1(ordenar);
-                    foreach (string letras in ordenar)
+                    for (int i = 0; i < ordenar.Length; i++)
                     {
-                        txtPantalla.Text += letras + "\n";
+                        if (i != ordenar.Length - 1)
+                        {
+                            txtPantalla.Text += ordenar[i] + "\n";
+                        }
+                        else
+                        {
+                            txtPantalla.Text += ordenar[i];
+                        }
                     }
                 }
             }
@@ -131,16 +190,45 @@ namespace Ordenar_texto
                 ordenar = txtPantalla.Text.Split('\n');
 
                 txtPantalla.Clear();
-                if (ordenar.Length > 0)
+                if (COrdenamineto.EsNum(ordenar))
                 {
+                    OrdenandoLetrasNumeros.Text = "Estas ordenando numeros";
+                    ordenar2 = new float[ordenar.Length];
+                    for (int i = 0; i < ordenar2.Length; i++) { ordenar2[i] = float.Parse(ordenar[i]); }
 
+                    CordenamientoNum.SelecctionSort(ordenar2);
+
+                    for (int i = 0; i < ordenar2.Length; i++)
+                    {
+                        if (i != ordenar2.Length - 1)
+                        {
+                            txtPantalla.Text += ordenar2[i] + "\n";
+                        }
+                        else
+                        {
+                            txtPantalla.Text += ordenar2[i];
+                        }
+                    }
+                    
+                }
+                else {
+                    OrdenandoLetrasNumeros.Text = "Estas ordenando letras";
+                    
                     //metodo de ordenamineto
                     orde1.SelecctionSort(ordenar);
                     //Array.Sort(ordenar);
-                    foreach (string letras in ordenar)
+                    for (int i = 0; i < ordenar.Length; i++)
                     {
-                        txtPantalla.Text += letras + "\n";
+                        if (i != ordenar.Length - 1)
+                        {
+                            txtPantalla.Text += ordenar[i] + "\n";
+                        }
+                        else
+                        {
+                            txtPantalla.Text += ordenar[i];
+                        }
                     }
+                    
                 }
             }
         }
@@ -201,29 +289,61 @@ namespace Ordenar_texto
                 ordenar = new string[txtPantalla.Lines.Count()];
                 ordenar = txtPantalla.Text.Split('\n');
                 txtPantalla.Clear();
-
-                //ponemos de reversa el array
-                Array.Reverse(ordenar);
-
-                //foreach(string letras in ordenar)
-                //{
-                //    txtPantalla.Text += letras + "\n";
-                //}
-                for(int i = 0; i < ordenar.Length; i++)
+                if (COrdenamineto.EsNum(ordenar))
                 {
-                    if (i != ordenar.Length - 1)
+                    OrdenandoLetrasNumeros.Text = "Estas ordenando numeros";
+                    ordenar2 = new float[ordenar.Length];
+                    for (int i = 0; i < ordenar2.Length; i++) { ordenar2[i] = float.Parse(ordenar[i]); }
+
+                    Array.Reverse(ordenar2);
+
+                    for (int i = 0; i < ordenar2.Length; i++)
                     {
-                        txtPantalla.Text += ordenar[i] + "\n";
+                        if (i != ordenar2.Length - 1)
+                        {
+                            txtPantalla.Text += ordenar2[i] + "\n";
+                        }
+                        else
+                        {
+                            txtPantalla.Text += ordenar2[i];
+                        }
                     }
-                    else
+                    
+                }
+                else
+                {
+                    OrdenandoLetrasNumeros.Text = "Estas ordenando letras";
+                    //ponemos de reversa el array
+                    Array.Reverse(ordenar);
+
+                    //foreach(string letras in ordenar)
+                    //{
+                    //    txtPantalla.Text += letras + "\n";
+                    //}
+                    for (int i = 0; i < ordenar.Length; i++)
                     {
-                        txtPantalla.Text += ordenar[i];
+                        if (i != ordenar.Length - 1)
+                        {
+                            txtPantalla.Text += ordenar[i] + "\n";
+                        }
+                        else
+                        {
+                            txtPantalla.Text += ordenar[i];
+                        }
                     }
                 }
+                
 
 
 
             }
+        }
+
+        private void Generador_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            
         }
 
         private void txtPantalla_TextChanged(object sender, EventArgs e)

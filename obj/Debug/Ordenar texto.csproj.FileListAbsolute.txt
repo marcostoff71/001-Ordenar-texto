@@ -8,3 +8,4 @@ C:\Users\lenovo\Desktop\2021\Aplicaciones\001 Ordenar texto forms\Ordenar texto\
 C:\Users\lenovo\Desktop\2021\Aplicaciones\001 Ordenar texto forms\Ordenar texto\obj\Debug\Ordenar texto.csproj.CoreCompileInputs.cache
 C:\Users\lenovo\Desktop\2021\Aplicaciones\001 Ordenar texto forms\Ordenar texto\obj\Debug\Ordenar texto.exe
 C:\Users\lenovo\Desktop\2021\Aplicaciones\001 Ordenar texto forms\Ordenar texto\obj\Debug\Ordenar texto.pdb
+C:\Users\lenovo\Desktop\2021\Aplicaciones\001 Ordenar texto forms\Ordenar texto\obj\Debug\Ordenar_texto.Form2.resources
