@@ -8,14 +8,27 @@ namespace Ordenar_texto
 {
     class COrdenamineto
     {
+        public void DesordenarLetras(string [] pala)
+        {
+            Random rdn = new Random();
+            string aux;
+            for (int i = 0; i <pala.Length; i++)
+            {
+                int a = rdn.Next(pala.Length - 1);
+                aux = pala[i];
+                pala[i] = pala[a];
+                pala[a] = aux;
+                
+            }
+        }
         public static bool EsNum(string[] pLetras)
         {
             float num;
 
-            int cont=0, longitud = pLetras.Length;
-            foreach(string letra in pLetras)
+            int cont = 0, longitud = pLetras.Length;
+            foreach (string letra in pLetras)
             {
-                if(float.TryParse(letra,out num))
+                if (float.TryParse(letra, out num))
                 {
                     cont++;
                 }
@@ -31,7 +44,7 @@ namespace Ordenar_texto
             }
 
         }
-        public void BUbbleSort(string [] ordenar)
+        public void BUbbleSort(string[] ordenar)
         {
             string aux;
             for (int i = 1; i < ordenar.Length; i++)
@@ -81,17 +94,30 @@ namespace Ordenar_texto
                 ordenar[i] = ordenar[imin];
                 ordenar[imin] = aux;
             }
-            
+
         }
     }
     class CordenamientoNum
     {
+        public static void DesordenarNumeros(float[] numeros)
+        {
+            int n;
+            float aux;
+            Random rdn = new Random();
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                n = rdn.Next(numeros.Length - 1);
+                aux = numeros[i];
+                numeros[i] = numeros[n];
+                numeros[n] = aux;
+            }
+        }
         public static void BubbleSort(float[] numeros)
         {
             float aux;
-            for(int i = 1; i < numeros.Length; i++)
+            for (int i = 1; i < numeros.Length; i++)
             {
-                for(int j = 0; j < numeros.Length - i; j++)
+                for (int j = 0; j < numeros.Length - i; j++)
                 {
                     if (numeros[j] > numeros[j + 1])
                     {
@@ -107,7 +133,7 @@ namespace Ordenar_texto
             float dato;
             int postA;
 
-            for(int i = 1; i < numeros.Length; i++)
+            for (int i = 1; i < numeros.Length; i++)
             {
                 dato = numeros[i];
                 postA = i;
@@ -140,10 +166,10 @@ namespace Ordenar_texto
             int iMin;
             float aux;
 
-            for(int i = 0; i < numeros.Length; i++)
+            for (int i = 0; i < numeros.Length; i++)
             {
                 iMin = i;
-                for(int j = i + 1; j < numeros.Length; j++)
+                for (int j = i + 1; j < numeros.Length; j++)
                 {
                     if (numeros[iMin] > numeros[j])
                     {

@@ -33,9 +33,10 @@ namespace Ordenar_texto
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.Pegar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.OrdenandoLetrasNumeros = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +64,18 @@ namespace Ordenar_texto
             this.panel24 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel41 = new System.Windows.Forms.Panel();
+            this.btnDesordenar = new System.Windows.Forms.Button();
+            this.panel42 = new System.Windows.Forms.Panel();
+            this.panel43 = new System.Windows.Forms.Panel();
+            this.panel44 = new System.Windows.Forms.Panel();
+            this.panel45 = new System.Windows.Forms.Panel();
+            this.panel36 = new System.Windows.Forms.Panel();
+            this.Generador = new System.Windows.Forms.Button();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.panel38 = new System.Windows.Forms.Panel();
+            this.panel39 = new System.Windows.Forms.Panel();
+            this.panel40 = new System.Windows.Forms.Panel();
             this.panel31 = new System.Windows.Forms.Panel();
             this.Invertir = new System.Windows.Forms.Button();
             this.panel32 = new System.Windows.Forms.Panel();
@@ -91,13 +104,6 @@ namespace Ordenar_texto
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.OrdenandoLetrasNumeros = new System.Windows.Forms.ToolStripLabel();
-            this.panel36 = new System.Windows.Forms.Panel();
-            this.Generador = new System.Windows.Forms.Button();
-            this.panel37 = new System.Windows.Forms.Panel();
-            this.panel38 = new System.Windows.Forms.Panel();
-            this.panel39 = new System.Windows.Forms.Panel();
-            this.panel40 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -107,11 +113,12 @@ namespace Ordenar_texto
             this.panel26.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel41.SuspendLayout();
+            this.panel36.SuspendLayout();
             this.panel31.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel36.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -128,7 +135,7 @@ namespace Ordenar_texto
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
-            this.toolStripButton2,
+            this.Pegar,
             this.toolStripButton3,
             this.toolStripComboBox1,
             this.OrdenandoLetrasNumeros});
@@ -148,14 +155,15 @@ namespace Ordenar_texto
             this.toolStripButton1.Text = "Deshacer";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripButton2
+            // Pegar
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.Pegar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Pegar.Image = ((System.Drawing.Image)(resources.GetObject("Pegar.Image")));
+            this.Pegar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Pegar.Name = "Pegar";
+            this.Pegar.Size = new System.Drawing.Size(23, 22);
+            this.Pegar.Text = "Pegar";
+            this.Pegar.Click += new System.EventHandler(this.Pegar_Click);
             // 
             // toolStripButton3
             // 
@@ -169,8 +177,22 @@ namespace Ordenar_texto
             // 
             // toolStripComboBox1
             // 
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "10",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17"});
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 25);
+            this.toolStripComboBox1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
+            // 
+            // OrdenandoLetrasNumeros
+            // 
+            this.OrdenandoLetrasNumeros.Name = "OrdenandoLetrasNumeros";
+            this.OrdenandoLetrasNumeros.Size = new System.Drawing.Size(0, 22);
             // 
             // menuStrip1
             // 
@@ -417,6 +439,7 @@ namespace Ordenar_texto
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel41);
             this.panel3.Controls.Add(this.panel36);
             this.panel3.Controls.Add(this.panel31);
             this.panel3.Controls.Add(this.panel15);
@@ -427,6 +450,118 @@ namespace Ordenar_texto
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(285, 429);
             this.panel3.TabIndex = 0;
+            // 
+            // panel41
+            // 
+            this.panel41.Controls.Add(this.btnDesordenar);
+            this.panel41.Controls.Add(this.panel42);
+            this.panel41.Controls.Add(this.panel43);
+            this.panel41.Controls.Add(this.panel44);
+            this.panel41.Controls.Add(this.panel45);
+            this.panel41.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel41.Location = new System.Drawing.Point(0, 330);
+            this.panel41.Name = "panel41";
+            this.panel41.Size = new System.Drawing.Size(285, 66);
+            this.panel41.TabIndex = 7;
+            // 
+            // btnDesordenar
+            // 
+            this.btnDesordenar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDesordenar.Location = new System.Drawing.Point(30, 16);
+            this.btnDesordenar.Name = "btnDesordenar";
+            this.btnDesordenar.Size = new System.Drawing.Size(230, 29);
+            this.btnDesordenar.TabIndex = 0;
+            this.btnDesordenar.Text = "Desordenar";
+            this.btnDesordenar.UseVisualStyleBackColor = true;
+            this.btnDesordenar.Click += new System.EventHandler(this.btnDesordenar_Click);
+            // 
+            // panel42
+            // 
+            this.panel42.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel42.Location = new System.Drawing.Point(260, 16);
+            this.panel42.Name = "panel42";
+            this.panel42.Size = new System.Drawing.Size(25, 29);
+            this.panel42.TabIndex = 0;
+            // 
+            // panel43
+            // 
+            this.panel43.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel43.Location = new System.Drawing.Point(0, 16);
+            this.panel43.Name = "panel43";
+            this.panel43.Size = new System.Drawing.Size(30, 29);
+            this.panel43.TabIndex = 1;
+            // 
+            // panel44
+            // 
+            this.panel44.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel44.Location = new System.Drawing.Point(0, 45);
+            this.panel44.Name = "panel44";
+            this.panel44.Size = new System.Drawing.Size(285, 21);
+            this.panel44.TabIndex = 2;
+            // 
+            // panel45
+            // 
+            this.panel45.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel45.Location = new System.Drawing.Point(0, 0);
+            this.panel45.Name = "panel45";
+            this.panel45.Size = new System.Drawing.Size(285, 16);
+            this.panel45.TabIndex = 2;
+            // 
+            // panel36
+            // 
+            this.panel36.Controls.Add(this.Generador);
+            this.panel36.Controls.Add(this.panel37);
+            this.panel36.Controls.Add(this.panel38);
+            this.panel36.Controls.Add(this.panel39);
+            this.panel36.Controls.Add(this.panel40);
+            this.panel36.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel36.Location = new System.Drawing.Point(0, 264);
+            this.panel36.Name = "panel36";
+            this.panel36.Size = new System.Drawing.Size(285, 66);
+            this.panel36.TabIndex = 6;
+            // 
+            // Generador
+            // 
+            this.Generador.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Generador.Location = new System.Drawing.Point(30, 16);
+            this.Generador.Name = "Generador";
+            this.Generador.Size = new System.Drawing.Size(230, 29);
+            this.Generador.TabIndex = 0;
+            this.Generador.Text = "Generar";
+            this.Generador.UseVisualStyleBackColor = true;
+            this.Generador.Click += new System.EventHandler(this.Generador_Click);
+            // 
+            // panel37
+            // 
+            this.panel37.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel37.Location = new System.Drawing.Point(260, 16);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(25, 29);
+            this.panel37.TabIndex = 0;
+            // 
+            // panel38
+            // 
+            this.panel38.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel38.Location = new System.Drawing.Point(0, 16);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(30, 29);
+            this.panel38.TabIndex = 1;
+            // 
+            // panel39
+            // 
+            this.panel39.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel39.Location = new System.Drawing.Point(0, 45);
+            this.panel39.Name = "panel39";
+            this.panel39.Size = new System.Drawing.Size(285, 21);
+            this.panel39.TabIndex = 2;
+            // 
+            // panel40
+            // 
+            this.panel40.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel40.Location = new System.Drawing.Point(0, 0);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(285, 16);
+            this.panel40.TabIndex = 2;
             // 
             // panel31
             // 
@@ -657,67 +792,6 @@ namespace Ordenar_texto
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // OrdenandoLetrasNumeros
-            // 
-            this.OrdenandoLetrasNumeros.Name = "OrdenandoLetrasNumeros";
-            this.OrdenandoLetrasNumeros.Size = new System.Drawing.Size(0, 22);
-            // 
-            // panel36
-            // 
-            this.panel36.Controls.Add(this.Generador);
-            this.panel36.Controls.Add(this.panel37);
-            this.panel36.Controls.Add(this.panel38);
-            this.panel36.Controls.Add(this.panel39);
-            this.panel36.Controls.Add(this.panel40);
-            this.panel36.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel36.Location = new System.Drawing.Point(0, 264);
-            this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(285, 66);
-            this.panel36.TabIndex = 6;
-            // 
-            // Generador
-            // 
-            this.Generador.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Generador.Location = new System.Drawing.Point(30, 16);
-            this.Generador.Name = "Generador";
-            this.Generador.Size = new System.Drawing.Size(230, 29);
-            this.Generador.TabIndex = 0;
-            this.Generador.Text = "Generar";
-            this.Generador.UseVisualStyleBackColor = true;
-            this.Generador.Click += new System.EventHandler(this.Generador_Click);
-            // 
-            // panel37
-            // 
-            this.panel37.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel37.Location = new System.Drawing.Point(260, 16);
-            this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(25, 29);
-            this.panel37.TabIndex = 0;
-            // 
-            // panel38
-            // 
-            this.panel38.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel38.Location = new System.Drawing.Point(0, 16);
-            this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(30, 29);
-            this.panel38.TabIndex = 1;
-            // 
-            // panel39
-            // 
-            this.panel39.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel39.Location = new System.Drawing.Point(0, 45);
-            this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(285, 21);
-            this.panel39.TabIndex = 2;
-            // 
-            // panel40
-            // 
-            this.panel40.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel40.Location = new System.Drawing.Point(0, 0);
-            this.panel40.Name = "panel40";
-            this.panel40.Size = new System.Drawing.Size(285, 16);
-            this.panel40.TabIndex = 2;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -728,7 +802,8 @@ namespace Ordenar_texto
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Ordenador";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
@@ -743,11 +818,12 @@ namespace Ordenar_texto
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel41.ResumeLayout(false);
+            this.panel36.ResumeLayout(false);
             this.panel31.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel36.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -776,7 +852,6 @@ namespace Ordenar_texto
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.RichTextBox txtPantalla;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
@@ -791,7 +866,7 @@ namespace Ordenar_texto
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton Pegar;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.Panel panel20;
@@ -822,6 +897,13 @@ namespace Ordenar_texto
         private System.Windows.Forms.Panel panel38;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.Panel panel40;
+        public System.Windows.Forms.RichTextBox txtPantalla;
+        private System.Windows.Forms.Panel panel41;
+        private System.Windows.Forms.Button btnDesordenar;
+        private System.Windows.Forms.Panel panel42;
+        private System.Windows.Forms.Panel panel43;
+        private System.Windows.Forms.Panel panel44;
+        private System.Windows.Forms.Panel panel45;
     }
 }
 
